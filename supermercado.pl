@@ -30,9 +30,9 @@ marcaImportante(laSerenisima).
 %2) Resuelva el predicado cuantoGasto/2 que relaciona una persona con el total que gastó.  ? cuantoGasto(flor, Total)
 %Total = 13.5 (3.5 de los dos yogures y 10 de las cuatro leches)
 
-precio(A) :- compro(_,_,L),precioUnitario(_,H), A is L*H.
-precio(B) :- compro(_,_,L),precioUnitario(_,H), A is L*H.
-total(C) :- precio(A)+precio(B).
-cuantoGasto(flor,Total).
+
+
+cuantoGasto(flor,Total) :- compro(flor,A,L),precioUnitario(A,H), Total is L*H.
+
 
 

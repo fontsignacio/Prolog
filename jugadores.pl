@@ -35,4 +35,19 @@ toma_basualdo(A) :- not(producto(A)).
 
 suspendido1(A,B) :- jugador(A),sustanciaProhibida(B).
 suspendido2(A,B) :- jugador(A),composicion(B,_).
-suspendido(A,B,C) :- suspendido1(A,B); maximo(B,C).
+suspendido3(A,B,C) :- suspendido1(A,B); maximo(B,C).
+suspendido(A,B,C) :- suspendido2(A,B); suspendido3(A,B,C). 
+
+
+amigo(maradona, caniggia).
+amigo(caniggia, balbo).
+amigo(balbo, chamot).
+amigo(balbo, pedemonti).
+
+
+suspendidos(balbo).
+malaInfluencia(A,B):- (amigo(A,B);amigo(_,B);amigo(B,_)),suspendidos(B). 
+
+
+
+
