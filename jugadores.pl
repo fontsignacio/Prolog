@@ -26,13 +26,13 @@ composicion(cafeVeloz, [efedrina, ajipupa, extasis, whisky, cafe]).
 sustanciaProhibida(efedrina).
 sustanciaProhibida(cocaina).
 
-pasarela(A) :- not(tomo(maradona,sustancia(A))), 				   				   		   not(tomo(maradona,compuesto(A))).
+pasarela(A) :- not(tomo(maradona,sustancia(A))), not(tomo(maradona,compuesto(A))).
 
 tomoPedemonti(A) :- ((tomo(maradona,compuesto(A))),(tomo(chamot,compuesto(A)))).
 
 producto(cocacola).
 toma_basualdo(A) :- not(producto(A)).
 
-suspendido1(A,B) :- 	jugador(A),sustanciaProhibida(B).
-%suspendido2(A,B) :-  	jugador(A),composicion(B,sustanciaProhibida(efedrina)).
-suspendido(A,B,C) :-  suspendido1(A,B); maximo(B,C). 
+suspendido1(A,B) :- jugador(A),sustanciaProhibida(B).
+suspendido2(A,B) :- jugador(A),composicion(B,_).
+suspendido(A,B,C) :- suspendido1(A,B); maximo(B,C).

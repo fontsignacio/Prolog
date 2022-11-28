@@ -1,0 +1,1 @@
+bizcoco([leche, azúcar, harina y huevo]).
